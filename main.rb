@@ -523,3 +523,16 @@ water_consumption_data = JSON.parse(%q|
 # puts water_consumption_data["data"][37][8] # year
 # puts water_consumption_data["data"][37][9] # population
 # puts water_consumption_data["data"][37][10] # NYC consumption millions of gallons per day
+
+# # Phase 2
+# puts "What year do you want to look?"
+# user_year = gets.chomp
+# water_consumption_data["data"].each do |year|
+#   if year[8] == user_year
+#     puts "NYC Population: #{year[9]}"
+#     puts "Consumption in millions of gallons per day: #{year[10]}"
+#     break
+#   end
+# end
+
+
