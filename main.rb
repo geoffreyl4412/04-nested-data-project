@@ -550,9 +550,11 @@ def run(consumptions)
   user_year = gets.chomp
   begin
     consumed_info = year_to_info(consumptions,user_year) # calls the method on line 539 and returns that value here
-    puts "In the year #{consumed_info[:date]}, the population in NYC was #{consumed_info[:population]}." # string interpolation to make the values of the symbols into readable language for the user
+    # string interpolation to make the values of the symbols into readable language for the user
+    puts "In the year #{consumed_info[:date]}, the population in NYC was #{consumed_info[:population]}." 
     puts "#{consumed_info[:consumption]} millions of gallons of water were consumed per day."
-  rescue # the 'else' if the input is not a valid year
+  # the 'else' if the input is not a valid year
+  rescue 
     puts "That is an invalid year!"
   end
 end
