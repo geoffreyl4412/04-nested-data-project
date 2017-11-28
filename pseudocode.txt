@@ -1,4 +1,5 @@
 Question: What year do you want to look up?
 user inputs a year within 1979 and 2016
-computer searches for the year that matched the user's input
-computer puts the parks that match
+computer searches for the year that matches the user's input
+computer returns the values of the info from that year to a symbol
+string interpolation to put the symbol into a sentence that is being puts
