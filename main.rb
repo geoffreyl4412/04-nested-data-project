@@ -535,4 +535,27 @@ water_consumption_data = JSON.parse(%q|
 #   end
 # end
 
+# Phase 3
+def year_to_info(consumptions,year)
+  consumptions["data"].each do |water_consume|
+    if water_consume[8] == year
+      return {date: water_consume[8], population: water_consume[9], consumption: water_consume[10]}
+      break
+    end
+  end
+end
+
+def run(consumptions)
+  puts "What year do you want to look up?"
+  user_year = gets.chomp
+  begin
+    consumed_info = year_to_info(consumptions,user_year)
+    puts "In the year #{consumed_info[:date]}, the population in NYC was #{consumed_info[:population]}."
+    puts "#{consumed_info[:consumption]} millions of gallons of water were consumed per day."
+  rescue
+    puts "That is not a valid year!"
+  end
+end
+
+run(water_consumption_data)
 

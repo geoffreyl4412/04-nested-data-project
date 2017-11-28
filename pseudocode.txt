@@ -1,1 +1,4 @@
-Question: Where are you?
+Question: What year do you want to look up?
+user inputs a year within 1979 and 2016
+computer searches for the year that matched the user's input
+computer puts the parks that match
