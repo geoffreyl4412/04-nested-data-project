@@ -1,5 +1,5 @@
 require 'json'
-violation_data = JSON.parse(%q|
+water_consumption_data = JSON.parse(%q|
 {
   "meta" : {
     "view" : {
@@ -517,3 +517,9 @@ violation_data = JSON.parse(%q|
 }
 |)
 
+# Phase 1
+# puts water_consumption_data
+# puts water_consumption_data["data"]
+# puts water_consumption_data["data"][37][8] # year
+# puts water_consumption_data["data"][37][9] # population
+# puts water_consumption_data["data"][37][10] # NYC consumption millions of gallons per day
