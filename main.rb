@@ -1,4 +1,4 @@
-require 'json'
+require 'json' # enables the json data to be viewed by ruby
 water_consumption_data = JSON.parse(%q|
 {
   "meta" : {
