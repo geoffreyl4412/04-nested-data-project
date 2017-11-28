@@ -522,12 +522,12 @@ water_consumption_data = JSON.parse(%q|
 # puts water_consumption_data["data"]
 # puts water_consumption_data["data"][37][8] # year
 # puts water_consumption_data["data"][37][9] # population
-# puts water_consumption_data["data"][37][10] # NYC consumption millions of gallons per day
+# puts water_consumption_data["data"][37][10] # consumption in millions of gallons per day
 
-# # Phase 2
+# Phase 2
 # puts "What year do you want to look?"
 # user_year = gets.chomp
-# water_consumption_data["data"].each do |year|
+# water_consumption_data["data"].each do |year| # goes through an array of arrays to search for the year the user gave since each year contains different info
 #   if year[8] == user_year
 #     puts "NYC Population: #{year[9]}"
 #     puts "Consumption in millions of gallons per day: #{year[10]}"
@@ -537,9 +537,9 @@ water_consumption_data = JSON.parse(%q|
 
 # Phase 3
 def year_to_info(consumptions,year)
-  consumptions["data"].each do |water_consume|
+  consumptions["data"].each do |water_consume| # goes through an array of arrays to search for the valid year the user gave since each year contains different info
     if water_consume[8] == year
-      return {date: water_consume[8], population: water_consume[9], consumption: water_consume[10]}
+      return {date: water_consume[8], population: water_consume[9], consumption: water_consume[10]} # returns the values of the array into symbols if the two years match
       break
     end
   end
@@ -549,13 +549,12 @@ def run(consumptions)
   puts "What year do you want to look up?"
   user_year = gets.chomp
   begin
-    consumed_info = year_to_info(consumptions,user_year)
-    puts "In the year #{consumed_info[:date]}, the population in NYC was #{consumed_info[:population]}."
+    consumed_info = year_to_info(consumptions,user_year) # calls the method on line 539 and returns that value here
+    puts "In the year #{consumed_info[:date]}, the population in NYC was #{consumed_info[:population]}." # string interpolation to make the values of the symbols into readable language for the user
     puts "#{consumed_info[:consumption]} millions of gallons of water were consumed per day."
-  rescue
-    puts "That is not a valid year!"
+  rescue # the 'else' if the input is not a valid year
+    puts "That is an invalid year!"
   end
 end
 
-run(water_consumption_data)
-
+run(water_consumption_data) # calls the method to start the program
